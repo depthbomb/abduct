@@ -1,0 +1,31 @@
+<div class="h-full flex flex-col justify-between">
+	<div class="flex flex-col space-y-2">
+		<input class="Input" type="url" placeholder="Enter a Reddit URL"
+			[value]="inputURL"
+			(input)="onInputChange($event)"
+			(keyup.enter)="submitURL()"
+			[ngClass]="{
+				'is-invalid': (!hasValidURL && hasInput),
+				'is-valid': (hasValidURL && hasInput)
+			}"
+			[disabled]="inProgress">
+		<button class="Button is-primary" (click)="submitURL()" [disabled]="!hasValidURL || inProgress">
+			<fa-icon icon="download" class="mr-1" [fixedWidth]="true"></fa-icon> Download
+		</button>
+	</div>
+
+	<div class="VideoPreview">
+		<video *ngIf="currentVideo" [src]="currentVideo" class="w-full max-h-64" controls></video>
+		<fa-icon *ngIf="!currentVideo" icon="film" class="text-gray-700 text-7xl"></fa-icon>
+		<div *ngIf="!currentVideo" class="ProgressText">
+			<p>{{ workState }}&hellip;</p>
+		</div>
+	</div>
+
+	<div class="flex flex-row justify-between">
+		<a class="FolderPicker" (click)="chooseDestination()">
+			<fa-icon icon="folder" class="mr-1" [fixedWidth]="true"></fa-icon> {{ destinationPath }}
+		</a>
+		<!-- <a class="AboutLink" (click)="showAboutWindow()">About</a> -->
+	</div>
+</div>

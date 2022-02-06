@@ -1,0 +1,26 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html,
+body {
+	@apply w-full h-full;
+}
+
+body {
+	@apply p-4;
+	@apply bg-gray-800;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	@apply font-serif;
+}
+
+a.Link {
+	@apply text-blue-500 hover:text-blue-600;
+	@apply hover:underline;
+}
+
+[hidden] {
+	@apply hidden invisible #{!important};
+}

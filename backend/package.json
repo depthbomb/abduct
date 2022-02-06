@@ -1,0 +1,51 @@
+{
+	"private": true,
+	"name": "net.caprine.abduct",
+	"author": "Caprine Logic",
+	"description": "Dead simple Reddit video downloader",
+	"version": "1.0.0",
+	"main": "dist/app.js",
+	"imports": {
+		"#args": "./dist/args.js",
+		"#ipc/*": "./dist/ipc/*.js",
+		"#types/*": "./dist/types/*.js",
+		"#constants": "./dist/constants.js",
+		"#services/*": "./dist/services/*.js"
+	},
+	"scripts": {
+		"test": "yarn build && yarn electron:test",
+		"build": "webpack --config ./webpack.main.config.js --mode=development && webpack --config ./webpack.preload.config.js --mode=development",
+		"dist": "webpack --config ./webpack.main.config.js --mode=production && webpack --config ./webpack.preload.config.js --mode=production",
+		"electron:test": "electron . --dev",
+		"electron:dist": "npm run electron:win64",
+		"electron:win64": "electron-builder --config electron-builder.config.js build -w --x64 --dir --publish=never",
+		"electron:win32": "electron-builder --config electron-builder.config.js build -w --ia32 --dir --publish=never",
+		"electron:arm64": "electron-builder --config electron-builder.config.js build -w --arm64 --dir --publish=never",
+		"electron:portable": "electron-builder --config electron-builder.config.js build -w=portable --publish=never",
+		"lint": "eslint ./src --ext .ts"
+	},
+	"dependencies": {
+		"axios": "^0.25.0",
+		"nanoid": "^3.2.0",
+		"sanitize-filename": "^1.6.3",
+		"tslib": "^2.3.1",
+		"type-flag": "^2.1.0"
+	},
+	"devDependencies": {
+		"@types/eslint": "^8.4.1",
+		"@types/rimraf": "^3.0.2",
+		"@typescript-eslint/eslint-plugin": "^5.10.2",
+		"@typescript-eslint/parser": "^5.10.2",
+		"electron": "^17.0.0",
+		"electron-builder": "^22.14.13",
+		"eslint": "^8.8.0",
+		"rimraf": "^3.0.2",
+		"terser-webpack-plugin": "^5.3.1",
+		"ts-loader": "^9.2.6",
+		"tsconfig-paths-webpack-plugin": "^3.5.2",
+		"typescript": "^4.5.5",
+		"webpack": "^5.68.0",
+		"webpack-cli": "^4.9.2"
+	},
+	"packageManager": "yarn@3.1.1"
+}
