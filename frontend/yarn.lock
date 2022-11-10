@@ -2114,10 +2114,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14.6.2":
-  version: 14.18.10
-  resolution: "@types/node@npm:14.18.10"
-  checksum: e722eec37be85dd7dddc4cfd26c501c66f1f2a7e0f603f57ff925348e65a5db603b06363fa27489cbecff44f0ae59812f22509923c4c45ffa5958604cc002401
+"@types/node@npm:^16.11.26":
+  version: 16.18.3
+  resolution: "@types/node@npm:16.18.3"
+  checksum: 6b8ba2ea5d842f7986e366cb9184c54d273d492784dc62e08fd5afeae938d9b61aec6e4222d2541cd18f9b1412ba361bbcb3f4204fb003608af80a2a6af959f9
   languageName: node
   linkType: hard
 
@@ -4008,16 +4008,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:^17.0.0":
-  version: 17.0.0
-  resolution: "electron@npm:17.0.0"
+"electron@npm:^18.3.7":
+  version: 18.3.15
+  resolution: "electron@npm:18.3.15"
   dependencies:
     "@electron/get": ^1.13.0
-    "@types/node": ^14.6.2
+    "@types/node": ^16.11.26
     extract-zip: ^1.0.3
   bin:
     electron: cli.js
-  checksum: c945a1a5475ba66ca70637b150b3f10ea9d28b1f2167a9d8d2137e087785f647e1153f4335f898238470392ed689e3d207b2b96928025c5dd092d6f601e21414
+  checksum: d5ff1a31cb2da292e3f1141036640cabe66563425ebe5ce9784c1945aab1f2b1a6d1b474c23c753cd46af5937702ace343d4b6f9119934bc86e3c41d4dd9fa4a
   languageName: node
   linkType: hard
 
@@ -8295,7 +8295,7 @@ __metadata:
     "@types/postcss-import": ^14.0.0
     autoprefixer: ^10.4.2
     cssnano: ^5.0.16
-    electron: ^17.0.0
+    electron: ^18.3.7
     postcss: ^8.4.6
     postcss-import: ^14.0.2
     rxjs: ~7.5.2
